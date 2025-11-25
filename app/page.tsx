@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import styles from './page.module.css';
+import Hero from '@/components/Hero/Hero';
 export default async function Home() {
   return (
-    <section>
-      <h1>Home</h1>
-      <h3>Welcome to RentalCar</h3>
-    </section>
+    <>
+      <Hero />
+    </>
   );
 }
