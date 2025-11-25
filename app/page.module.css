@@ -1,17 +1,1 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
 
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #0b44cd;
-  --button-secondary-hover: #3470ff;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-family);
-  background-color: var(--background);
-}

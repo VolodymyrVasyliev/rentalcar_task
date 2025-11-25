@@ -1,0 +1,26 @@
+export type Brand =
+  | 'Aston Martin'
+  | 'Audi'
+  | 'BMW'
+  | 'Bentley'
+  | 'Buick'
+  | 'Chevrolet'
+  | 'Chrysler'
+  | 'GMC'
+  | 'HUMMER'
+  | 'Hyundai'
+  | 'Kia'
+  | 'Lamborghini'
+  | 'Land Rover'
+  | 'Lincoln'
+  | 'MINI'
+  | 'Mercedes-Benz'
+  | 'Mitsubishi'
+  | 'Nissan'
+  | 'Pontiac'
+  | 'Subaru'
+  | 'Volvo';
+
+export type BrandList = {
+  brand: Brand[];
+};
