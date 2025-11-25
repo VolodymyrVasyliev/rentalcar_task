@@ -16,3 +16,10 @@ export type Car = {
   rentalConditions: string[];
   mileage: number;
 };
+
+export interface CarsResponse {
+  cars: Car[];
+  totalCars: number;
+  page: number;
+  totalPages: number;
+}
