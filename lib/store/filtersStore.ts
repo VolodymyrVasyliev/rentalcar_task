@@ -10,7 +10,7 @@ interface FiltersState {
   page: number;
   limit: number;
   setBrand: (brand: string) => void;
-  setPrice: (rentalPrice: string) => void;
+  setRentalPrice: (rentalPrice: string) => void;
   setMinMileage: (value: number) => void;
   setMaxMileage: (value: number) => void;
   setPage: (page: number) => void;
@@ -25,7 +25,7 @@ export const useFiltersStore = create<FiltersState>((set) => ({
   page: 1,
   limit: 12,
   setBrand: (brand) => set({ brand }),
-  setPrice: (rentalPrice) => set({ rentalPrice }),
+  setRentalPrice: (rentalPrice) => set({ rentalPrice }),
   setMinMileage: (minMileage) => set({ minMileage }),
   setMaxMileage: (maxMileage) => set({ maxMileage }),
   setPage: (page) => set({ page }),
