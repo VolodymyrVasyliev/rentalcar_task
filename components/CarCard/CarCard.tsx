@@ -12,6 +12,8 @@ const CarCard = ({ car }: Props) => {
   const city = addressParts[addressParts.length - 2] || '';
   const country = addressParts[addressParts.length - 1] || '';
   const formattedAddress = `${city} | ${country} | ${car.rentalCompany} |`;
+  const shortmile = car.mileage.toString();
+  const formattedmile = shortmile[0] + ' ' + shortmile.slice(1);
 
   return (
     <li className={css.container}>
@@ -24,7 +26,7 @@ const CarCard = ({ car }: Props) => {
       </div>
       <p className={css.address}>{formattedAddress}</p>
       <p className={css.mileage}>
-        {car.type} | {car.mileage}
+        {car.type} | {formattedmile}
       </p>
       <Link href={`/catalog/${car.id}`}>
         <button className={css.btn}>Read more</button>
