@@ -1,0 +1,26 @@
+.load_more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 156px;
+  padding: 12px 51px;
+
+  margin: 80px auto 124px auto;
+
+  border: 1px solid var(--button);
+  border-radius: 12px;
+
+  color: var(--main);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+}
+.load_more:hover {
+  border: 1px solid var(--button-hover);
+}

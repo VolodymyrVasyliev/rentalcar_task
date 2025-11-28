@@ -1,0 +1,75 @@
+.container {
+  max-width: 276px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.img {
+  border-radius: 14px;
+  width: 276px;
+  height: 268px;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 20, 23, 0.5) 0%,
+    rgba(18, 20, 23, 0.5) 100%
+  );
+}
+
+.name_year {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  overflow-wrap: break-word;
+  white-space: normal;
+  color: var(--main);
+}
+.name_year span {
+  color: var(--button);
+}
+
+.address {
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--gray);
+}
+
+.mileage {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--gray);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 28px;
+
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  width: 276px;
+  height: 44px;
+
+  background: var(--button);
+  font-family: var(--font-family);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--button-hover);
+}

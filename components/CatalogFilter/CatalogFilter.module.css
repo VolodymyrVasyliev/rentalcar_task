@@ -1,0 +1,117 @@
+.filterGroup {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 56px auto 86px auto;
+  max-width: 1050px;
+  height: 68px;
+}
+
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 204px;
+  height: 68px;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 133%;
+  color: var(--gray);
+}
+
+.select {
+  padding: 10px 12px;
+  border: 1px solid var(--inputs);
+  border-radius: 12px;
+  background: var(--inputs);
+  color: var(--main);
+  width: 204px;
+  height: 44px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+}
+
+.select option {
+  color: var(--gray);
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+}
+
+.select option:hover {
+  color: var(--gray);
+}
+
+.rangeWrapper {
+  display: flex;
+  /* width: 332px; */
+  /* height: 44px; */
+}
+
+.fromInput {
+  padding: 10px 12px;
+  border: 1px solid var(--inputs);
+  border-radius: 12px 0 0 12px;
+  border-right: 1px solid var(--gray-light);
+  background: var(--inputs);
+  color: var(--main);
+  width: 160px;
+  height: 44px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+}
+.toInput {
+  padding: 10px 12px;
+  border: 1px solid var(--inputs);
+  border-radius: 0 12px 12px 0;
+  border-left: 1px solid var(--gray-light);
+  background: var(--inputs);
+  color: var(--main);
+  width: 160px;
+  height: 44px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.searchButton {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: var(--button);
+  font-family: var(--font-family);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  cursor: pointer;
+}
+.searchButton:hover {
+  background: var(--button-hover);
+}
+
+@media (max-width: 768px) {
+  .filterGroup {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+}
