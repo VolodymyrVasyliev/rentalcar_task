@@ -17,7 +17,7 @@ interface FiltersState {
   setLimit: (limit: number) => void;
 }
 
-export const useFiltersStore = create<FiltersState>((set) => ({
+export const useFiltersStore = create<FiltersState>()((set) => ({
   brand: '',
   rentalPrice: '0',
   minMileage: 0,

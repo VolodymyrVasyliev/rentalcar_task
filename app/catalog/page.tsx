@@ -12,8 +12,6 @@ const Catalog = () => {
 
   const [brand, setBrand] = useState<string | undefined>();
   const [rentalPrice, setRentalPrice] = useState<string | undefined>();
-  const [minMileage, setMinMileage] = useState<number | undefined>();
-  const [maxMileage, setMaxMileage] = useState<number | undefined>();
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -22,8 +20,6 @@ const Catalog = () => {
         limit: 12,
         brand,
         rentalPrice,
-        minMileage,
-        maxMileage,
       });
 
       if (page === 1) {
@@ -34,7 +30,7 @@ const Catalog = () => {
     };
 
     fetchCars();
-  }, [page, brand, rentalPrice, minMileage, maxMileage]);
+  }, [page, brand, rentalPrice]);
 
   const loadMore = () => {
     setPage((prev) => prev + 1);
@@ -42,11 +38,24 @@ const Catalog = () => {
 
   return (
     <section>
-      <CatalogFilter cars={cars} />
-      <CarList cars={cars} />
-      <button className={css.load_more} onClick={loadMore}>
-        Load More
-      </button>
+      <CatalogFilter
+        cars={cars}
+        onSearch={({ selectedBrand, rentalPrice }) => {
+          setBrand(selectedBrand);
+          setRentalPrice(rentalPrice);
+          setPage(1);
+        }}
+      />
+      {cars.length === 0 ? (
+        <p className={css.noCars}>Машини не знайдено ⛔️</p>
+      ) : (
+        <>
+          <CarList cars={cars} />
+          <button className={css.load_more} onClick={loadMore}>
+            Load More
+          </button>
+        </>
+      )}
     </section>
   );
 };

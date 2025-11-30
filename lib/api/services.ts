@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Car, CarsResponse } from '@/types/car';
 import { api } from './api';
-import { BrandList } from '@/types/brands';
+import { Brand, BrandList } from '@/types/brands';
 
 interface GetCarsParams {
   page?: number;
@@ -33,6 +33,6 @@ export const getCarById = async (id: string): Promise<Car> => {
 };
 
 export const getBrand = async () => {
-  const res = await api.get<BrandList>('/brand');
+  const res = await api.get<Brand[]>('/brands');
   return res.data;
 };
