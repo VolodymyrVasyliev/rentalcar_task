@@ -1,28 +1,26 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Car } from '@/types/car';
 
 interface FavoritesState {
-  favorites: Car[];
-  addFavorite: (car: Car) => void;
-  removeFavorite: (id: string) => void;
+  favorites: string[];
+  toggleFavorite: (id: string) => void;
+  isFavorite: (id: string) => boolean;
 }
 
-export const useFavoritesStore = create(
-  persist<FavoritesState>(
-    (set) => ({
+export const useFavoritesStore = create<FavoritesState>()(
+  persist(
+    (set, get) => ({
       favorites: [],
-      addFavorite: (car) =>
-        set((state) => ({
-          favorites: [...state.favorites, car],
-        })),
-      removeFavorite: (id) =>
-        set((state) => ({
-          favorites: state.favorites.filter((car) => car.id !== id),
-        })),
+      toggleFavorite: (id) => {
+        const { favorites } = get();
+        if (favorites.includes(id)) {
+          set({ favorites: favorites.filter((fav) => fav !== id) });
+        } else {
+          set({ favorites: [...favorites, id] });
+        }
+      },
+      isFavorite: (id) => get().favorites.includes(id),
     }),
-    {
-      name: 'favorites-storage', // ключ у localStorage
-    },
+    { name: 'favorites-storage' },
   ),
 );
