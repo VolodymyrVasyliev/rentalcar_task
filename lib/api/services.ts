@@ -8,8 +8,8 @@ interface GetCarsParams {
   limit?: number;
   brand?: string;
   rentalPrice?: string;
-  minMileage?: number;
-  maxMileage?: number;
+  minMileage?: string;
+  maxMileage?: string;
 }
 
 export const getCar = async (params: GetCarsParams) => {
