@@ -9,17 +9,34 @@ import { Car } from '@/types/car';
 const Catalog = () => {
   const [cars, setCars] = useState<Car[]>([]);
   const [page, setPage] = useState(1);
-
+  // filter condition
   const [brand, setBrand] = useState<string | undefined>();
   const [rentalPrice, setRentalPrice] = useState<string | undefined>();
+  const [minMileage, setMinMileage] = useState<string | undefined>();
+  const [maxMileage, setMaxMileage] = useState<string | undefined>();
+
+  console.log(
+    'State:',
+    'brand',
+    brand,
+    'price',
+    rentalPrice,
+    'min',
+    minMileage,
+    'max',
+    maxMileage,
+  );
 
   useEffect(() => {
     const fetchCars = async () => {
       const newCars = await getCar({
         page,
         limit: 12,
-        brand,
-        rentalPrice,
+        brand: !brand || brand === '' ? undefined : brand,
+        rentalPrice:
+          !rentalPrice || rentalPrice === '' ? undefined : rentalPrice,
+        minMileage: minMileage !== undefined ? String(minMileage) : undefined,
+        maxMileage: maxMileage !== undefined ? String(maxMileage) : undefined,
       });
 
       if (page === 1) {
@@ -30,7 +47,33 @@ const Catalog = () => {
     };
 
     fetchCars();
-  }, [page, brand, rentalPrice]);
+  }, [page, brand, rentalPrice, minMileage, maxMileage]);
+
+  const handleSearch = async (filters: {
+    selectedBrand: string;
+    rentalPrice: string;
+    minMileage: string;
+    maxMileage: string;
+  }) => {
+    setBrand(filters.selectedBrand);
+    setRentalPrice(filters.rentalPrice);
+    setMinMileage(filters.minMileage);
+    setMaxMileage(filters.maxMileage);
+
+    console.log(
+      'Catalog-search->',
+      'Brand',
+      filters.selectedBrand,
+      'Price',
+      filters.rentalPrice,
+      'Mileage :',
+      'min',
+      filters.minMileage,
+      '- max',
+      filters.maxMileage,
+    );
+    setPage(1);
+  };
 
   const loadMore = () => {
     setPage((prev) => prev + 1);
@@ -38,16 +81,9 @@ const Catalog = () => {
 
   return (
     <section>
-      <CatalogFilter
-        cars={cars}
-        onSearch={({ selectedBrand, rentalPrice }) => {
-          setBrand(selectedBrand);
-          setRentalPrice(rentalPrice);
-          setPage(1);
-        }}
-      />
+      <CatalogFilter cars={cars} onSearch={handleSearch} />
       {cars.length === 0 ? (
-        <p className={css.noCars}>Машини не знайдено ⛔️</p>
+        <p className={css.noCars}>Cars no found ⛔️</p>
       ) : (
         <>
           <CarList cars={cars} />

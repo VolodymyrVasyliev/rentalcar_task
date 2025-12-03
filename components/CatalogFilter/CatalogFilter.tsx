@@ -7,14 +7,23 @@ import { getBrand } from '../../lib/api/services';
 
 type Props = {
   cars: Car[];
-  onSearch: (filters: { selectedBrand: string; rentalPrice: string }) => void;
+  onSearch: (filters: {
+    selectedBrand: string;
+    rentalPrice: string;
+    maxMileage: string;
+    minMileage: string;
+  }) => void;
 };
+
+const price = ['30', '40', '50', '60', '70', '80'];
 
 const CatalogFilter = ({ cars, onSearch }: Props) => {
   const [brand, setBrand] = useState<Brand[]>([]);
-  const [selectedBrand, setSelectedBrand] = useState<string | ''>('');
 
+  const [selectedBrand, setSelectedBrand] = useState<string | ''>('');
   const [rentalPrice, setRentalPrice] = useState<string | ''>('');
+  const [minMileage, setMinMileage] = useState<string | ''>('');
+  const [maxMileage, setMaxMileage] = useState<string | ''>('');
 
   useEffect(() => {
     const fetchBrands = async () => {
@@ -41,9 +50,10 @@ const CatalogFilter = ({ cars, onSearch }: Props) => {
           <option value="" disabled>
             Choose a brand
           </option>
+          <option value="">All cars</option>
 
-          {brand.map((b) => (
-            <option key={b}>{b}</option>
+          {brand.map((brand) => (
+            <option key={brand}>{brand}</option>
           ))}
         </select>
       </div>
@@ -57,14 +67,16 @@ const CatalogFilter = ({ cars, onSearch }: Props) => {
         <select
           className={css.select}
           id="price"
+          value={rentalPrice}
           onChange={(e) => setRentalPrice(e.target.value)}
         >
           <option value="" disabled>
             Choose a price
           </option>
+          <option value="">All price</option>
 
-          {cars.map((cars) => (
-            <option key={cars.id}>{cars.rentalPrice}</option>
+          {price.map((prise) => (
+            <option key={prise}>{prise}</option>
           ))}
         </select>
       </div>
@@ -73,14 +85,28 @@ const CatalogFilter = ({ cars, onSearch }: Props) => {
       <div className={css.selectWrapper}>
         <label className={css.label}>Car mileage / km</label>
         <div className={css.rangeWrapper}>
-          <input type="number" className={css.fromInput} placeholder="From" />
-          <input type="number" className={css.toInput} placeholder="To" />
+          <input
+            type="number"
+            className={css.fromInput}
+            placeholder="From"
+            value={minMileage}
+            onChange={(e) => setMinMileage(e.target.value)}
+          />
+          <input
+            type="number"
+            className={css.toInput}
+            placeholder="To"
+            value={maxMileage}
+            onChange={(e) => setMaxMileage(e.target.value)}
+          />
         </div>
       </div>
       <div className={css.buttonWrapper}>
         <button
           className={css.searchButton}
-          onClick={() => onSearch({ selectedBrand, rentalPrice })}
+          onClick={() =>
+            onSearch({ selectedBrand, rentalPrice, maxMileage, minMileage })
+          }
         >
           Search
         </button>
