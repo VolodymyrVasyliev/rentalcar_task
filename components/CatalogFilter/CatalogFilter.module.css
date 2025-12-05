@@ -66,7 +66,7 @@
   height: 44px;
   font-size: 14px;
   cursor: pointer;
-  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.05);
 }
 .toInput {
   padding: 10px 12px;
@@ -79,7 +79,7 @@
   height: 44px;
   font-size: 14px;
   cursor: pointer;
-  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.05);
 }
 
 .buttonWrapper {
@@ -111,7 +111,40 @@
   .filterGroup {
     flex-direction: column;
     align-items: center;
+    margin: 24px auto 66px auto;
     width: 100%;
     height: auto;
+  }
+
+  .selectWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 204px;
+    height: 68px;
+  }
+
+  .selectWrapper:nth-child(3) {
+    position: relative;
+    left: 22px;
+  }
+
+  .rangeWrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .fromInput {
+    border-radius: 12px;
+    border: 1px solid var(--gray-light);
+  }
+  .toInput {
+    border-radius: 12px;
+    border: 1px solid var(--gray-light);
+  }
+
+  .searchButton {
+    margin-top: 24px;
   }
 }
