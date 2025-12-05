@@ -1,8 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 # RentalCar – Frontend Web Application
-<br/>
-# 📝 Project Description
 
+# 📝 Project Description
 The goal of this project is to build the frontend part of the RentalCar web application — a service that provides car rental options.
 The application includes multiple pages that allow users to browse available cars, view detailed information, and submit a rental request.
 
