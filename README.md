@@ -10,25 +10,24 @@ The application includes multiple pages that allow users to browse available car
 
 # 🚗 Features
 ## Home Page
-  1 Visual banner/hero section
-  2 Button to navigate to the car catalog
-2. Car Catalog
-  1 List of available cars
-  2 Car card: image, name, type, price
-  3 Search/filter options (if implemented)
-  4 Navigation to a detailed car page
-3. Car Details Page
-  1 Extended characteristics (brand, model, year, type, price)
-  2 Large car image
-  3 Description and specifications
-  4 Rental form:
-     1 Name
-     2 Rental date
-     3 Contact information
-     4 Submit button
+  1. Visual banner/hero section
+  2. Button to navigate to the car catalog
+## Car Catalog
+  1. List of available cars
+  2. Car card: image, name, type, price
+  3. Search/filter options (if implemented)
+  4. Navigation to a detailed car page
+## Car Details Page
+  1. Extended characteristics (brand, model, year, type, price)
+  2. Large car image
+  3. Description and specifications
+  4. Rental form:
+     1. Name
+     2. Rental date
+     3. Contact information
+     4. Submit button
 # 🧰 Technologies Used
 
-HTML5 | CSS3 | JavaScript | Next.js | Zustand
-
+## HTML5 | CSS3 | JavaScript | Next.js | Zustand
 Deployment with Vercel
    
