@@ -89,3 +89,28 @@
 .icon {
   margin-right: 8px;
 }
+
+@media (max-width: 768px) {
+  .wrapperRight {
+    margin-left: 12px;
+  }
+  .container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+    margin: 24px auto 0 auto;
+  }
+
+  .img {
+    border: 1px solid var(--gray-light);
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    background: var(--white);
+  }
+
+  .conditions {
+    margin-top: 24px;
+  }
+}

@@ -15,18 +15,6 @@ const Catalog = () => {
   const [minMileage, setMinMileage] = useState<string | undefined>();
   const [maxMileage, setMaxMileage] = useState<string | undefined>();
 
-  console.log(
-    'State:',
-    'brand',
-    brand,
-    'price',
-    rentalPrice,
-    'min',
-    minMileage,
-    'max',
-    maxMileage,
-  );
-
   useEffect(() => {
     const fetchCars = async () => {
       const newCars = await getCar({
@@ -60,18 +48,6 @@ const Catalog = () => {
     setMinMileage(filters.minMileage);
     setMaxMileage(filters.maxMileage);
 
-    console.log(
-      'Catalog-search->',
-      'Brand',
-      filters.selectedBrand,
-      'Price',
-      filters.rentalPrice,
-      'Mileage :',
-      'min',
-      filters.minMileage,
-      '- max',
-      filters.maxMileage,
-    );
     setPage(1);
   };
 
