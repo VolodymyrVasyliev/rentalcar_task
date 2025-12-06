@@ -5,6 +5,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 The goal of this project is to build the frontend part of the RentalCar web application — a service that provides car rental options.
 The application includes multiple pages that allow users to browse available cars, view detailed information, and submit a rental request.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/VolodymyrVasyliev/rentalcar_task/main/public/Picture.jpg" width="100%" />
+</p>
+
 🔗 Live Demo: https://rentalcar-task.vercel.app/
 
 # 🚗 Features
