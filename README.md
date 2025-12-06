@@ -1,36 +1,55 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RentalCar – Frontend Web Application
 
-## Getting Started
+# 📝 Project Description
+The goal of this project is to build the frontend part of the RentalCar web application — a service that provides car rental options.
+The application includes multiple pages that allow users to browse available cars, view detailed information, and submit a rental request.
 
-First, run the development server:
+<p align="center">
+  <img src="https://raw.githubusercontent.com/VolodymyrVasyliev/rentalcar_task/main/public/Picture.jpg" width="100%" />
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔗 Live Demo: https://rentalcar-task.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🚗 Features
+<details>
+  <summary><strong> Home Page</strong></summary>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  1. Visual banner/hero section  
+  2. Button to navigate to the car catalog
+</details>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+<details>
+  <summary><strong> Car Catalog</strong></summary>
 
-To learn more about Next.js, take a look at the following resources:
+  1. List of available cars  
+  2. Car card: image, name, type, price  
+  3. Search/filter options (if implemented)  
+  4. Navigation to a detailed car page
+</details>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<details>
+  <summary><strong> Car Details Page</strong></summary>
 
-## Deploy on Vercel
+  1. Extended characteristics (brand, model, year, type, price)  
+  2. Large car image  
+  3. Description and specifications  
+  4. Rental form:  
+     - Name  
+     - Rental date  
+     - Contact information  
+     - Submit button
+</details>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# 🧰 Technologies Used
+
+## HTML5 | CSS3 | JavaScript | Next.js | Zustand
+Deployment with Vercel
+   
