@@ -12,23 +12,38 @@ The application includes multiple pages that allow users to browse available car
 🔗 Live Demo: https://rentalcar-task.vercel.app/
 
 # 🚗 Features
-## Home Page
-  1. Visual banner/hero section
+<details>
+  <summary><strong> Home Page</strong></summary>
+
+  1. Visual banner/hero section  
   2. Button to navigate to the car catalog
-## Car Catalog
-  1. List of available cars
-  2. Car card: image, name, type, price
-  3. Search/filter options (if implemented)
+</details>
+
+---
+
+<details>
+  <summary><strong> Car Catalog</strong></summary>
+
+  1. List of available cars  
+  2. Car card: image, name, type, price  
+  3. Search/filter options (if implemented)  
   4. Navigation to a detailed car page
-## Car Details Page
-  1. Extended characteristics (brand, model, year, type, price)
-  2. Large car image
-  3. Description and specifications
-  4. Rental form:
-     1. Name
-     2. Rental date
-     3. Contact information
-     4. Submit button
+</details>
+
+---
+
+<details>
+  <summary><strong> Car Details Page</strong></summary>
+
+  1. Extended characteristics (brand, model, year, type, price)  
+  2. Large car image  
+  3. Description and specifications  
+  4. Rental form:  
+     - Name  
+     - Rental date  
+     - Contact information  
+     - Submit button
+</details>
 # 🧰 Technologies Used
 
 ## HTML5 | CSS3 | JavaScript | Next.js | Zustand
