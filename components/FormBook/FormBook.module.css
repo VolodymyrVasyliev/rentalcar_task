@@ -1,8 +1,8 @@
 .connected {
   max-width: 640px;
   padding: 32px;
-  background: var(--white);
-  border: 1px solid var(--gray-light);
+  background: var(--gray-light);
+  border: 2px solid var(--gray);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -45,8 +45,8 @@
 }
 
 .connected textarea {
-  resize: vertical;
   min-height: 100px;
+  resize: none;
 }
 
 .connected button {
