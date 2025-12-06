@@ -44,6 +44,10 @@ The application includes multiple pages that allow users to browse available car
      - Contact information  
      - Submit button
 </details>
+
+---
+
+
 # 🧰 Technologies Used
 
 ## HTML5 | CSS3 | JavaScript | Next.js | Zustand
