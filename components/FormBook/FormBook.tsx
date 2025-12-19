@@ -25,7 +25,7 @@ const FormBook = ({ carId, carBrand }: Props) => {
         toast.success(
           values.name + ', ' + carBrand + ' successfully booked 🚗',
         );
-        console.log(values);
+        resetForm();
       }}
     >
       <Form className={css.connected}>
