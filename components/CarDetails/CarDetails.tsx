@@ -1,7 +1,6 @@
 import { Car } from '@/types/car';
 import FormBook from '../FormBook/FormBook';
 import css from './CarDetails.module.css';
-import Location from '@/icons/Location.svg';
 
 type Props = {
   car: Car;
@@ -24,7 +23,7 @@ const CarDetails = ({ car }: Props) => {
           width={640}
           height={512}
         />
-        <FormBook />
+        <FormBook carId={car.id} carBrand={car.brand} />
       </div>
 
       <div className={css.wrapperRight}>

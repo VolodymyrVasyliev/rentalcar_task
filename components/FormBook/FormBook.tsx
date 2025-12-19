@@ -1,30 +1,78 @@
+'use client';
+
+import toast from 'react-hot-toast';
 import css from './FormBook.module.css';
-const FormBook = () => {
+import { Formik, Form, Field } from 'formik';
+
+type Props = {
+  carId: string;
+  carBrand: string;
+};
+
+const FormBook = ({ carId, carBrand }: Props) => {
+  const today = new Date().toISOString().split('T')[0];
+
   return (
-    <form className={css.connected}>
-      <h2 className={css.title}>Book your car now</h2>
-      <p className={css.text}>
-        Stay connected! We are always ready to help you.
-      </p>
+    <Formik
+      initialValues={{
+        carId,
+        name: '',
+        email: '',
+        date: today,
+        comment: '',
+      }}
+      onSubmit={(values, { resetForm }) => {
+        toast.success(
+          values.name + ', ' + carBrand + ' successfully booked 🚗',
+        );
+        console.log(values);
+      }}
+    >
+      <Form className={css.connected}>
+        <h2 className={css.title}>Book your car now</h2>
 
-      <label>
-        <input type="text" name="name" placeholder="Name*" required />
-      </label>
+        <p className={css.text}>
+          Stay connected! We are always ready to help you.
+        </p>
 
-      <label>
-        <input type="email" name="email" placeholder="Email*" required />
-      </label>
+        <label className={css.label}>
+          <Field
+            className={css.input}
+            type="text"
+            name="name"
+            placeholder="Name*"
+            required
+          />
+        </label>
 
-      <label>
-        <input type="date" name="date" placeholder="Booking date" />
-      </label>
+        <label className={css.label}>
+          <Field
+            className={css.input}
+            type="email"
+            name="email"
+            placeholder="Email*"
+            required
+          />
+        </label>
 
-      <label>
-        <textarea name="comment" placeholder="Comment"></textarea>
-      </label>
+        <label className={css.label}>
+          <Field className={css.input} type="date" name="date" />
+        </label>
 
-      <button type="submit">Send</button>
-    </form>
+        <label className={css.label}>
+          <Field
+            as="textarea"
+            className={css.textarea}
+            name="comment"
+            placeholder="Comment"
+          />
+        </label>
+
+        <button className={css.button} type="submit">
+          Send
+        </button>
+      </Form>
+    </Formik>
   );
 };
 
